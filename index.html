@@ -142,7 +142,7 @@ modelFit &lt;- train(training_sub$classe ~ ., method = &quot;rf&quot;, data = tr
 <pre class="r"><code>confMat    &lt;- confusionMatrix(validating_sub$classe, predict(modelFit, validPC))
 mod_accuracy &lt;-  confMat$overall[&quot;Accuracy&quot;]
 error &lt;- 1 - mod_accuracy</code></pre>
-<p>The estimated model accuracy is 0.9758709 and the estimated out of sample error is 0.0241291.</p>
+<p>The estimated model accuracy is 0.9770603 and the estimated out of sample error is 0.0229397.</p>
 </div>
 <div id="prediction-results" class="section level3">
 <h3>Prediction Results</h3>
