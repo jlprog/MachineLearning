@@ -112,7 +112,7 @@ if( length(nsv) &gt; 0 ) {
      training &lt;- training[,-nsv]
      testing  &lt;- testing[,-nsv]
      }</code></pre>
-<p>Next, we split the training dataset into two subsets for later cross validation test with 70% data for modeling training and 30% for validation use.</p>
+<p>Next, we split the training dataset into two subsets for later cross validation test with 70% data for model training and 30% for validation use.</p>
 <pre class="r"><code>inTrain        &lt;- createDataPartition(y=training$classe, p=.7, list=F)
 training_sub   &lt;- training[inTrain,]
 validating_sub &lt;- training[-inTrain,]
@@ -120,7 +120,7 @@ dim(training_sub)</code></pre>
 <pre><code>## [1] 13737    53</code></pre>
 <pre class="r"><code>dim(validating_sub)</code></pre>
 <pre><code>## [1] 5885   53</code></pre>
-<p>We then the correlation of the predictive variables and use PCA (principal component analysis) to transform the data to a smaller sub-space where the new variables are uncorrelated with one another.</p>
+<p>We then check the correlation of the predictive variables and use PCA (principal component analysis) to transform the data to a smaller sub-space where the new variables are uncorrelated with one another.</p>
 <pre class="r"><code>library(caret)
 #Check correlation
 corIdx &lt;- findCorrelation(cor(training_sub[,-53]), cutoff= .75)

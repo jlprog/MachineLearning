@@ -71,7 +71,7 @@ if( length(nsv) > 0 ) {
      }
 ```
 
-Next, we split the training dataset into two subsets for later cross validation test with 70% data for modeling training and 30% for validation use.
+Next, we split the training dataset into two subsets for later cross validation test with 70% data for model training and 30% for validation use.
 
 ```{r}
 inTrain        <- createDataPartition(y=training$classe, p=.7, list=F)
@@ -81,12 +81,12 @@ dim(training_sub)
 dim(validating_sub)
 ```
 
-We then the correlation of the predictive variables and use PCA (principal component analysis) to transform the data to a smaller sub-space where the new variables are uncorrelated with one another.
+We then check the correlation of the predictive variables and use PCA (principal component analysis) to transform the data to a smaller sub-space where the new variables are uncorrelated with one another.
 
 ```{r}
 library(caret)
 #Check correlation
-corIdx <- findCorrelation(cor(training_sub[,-53]), cutoff= .75)
+corIdx <- findCorrelation(cor(training_sub[,-53]), cutoff= .9)
 
 #PCA preprocess
 preProc   <- preProcess(training_sub[,-53], method="pca", thresh=.9)
