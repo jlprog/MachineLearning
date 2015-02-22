@@ -1,5 +1,5 @@
 
-This repository is created for Coursera Practical Machine Learning course project. There are two files included in this repository ML_proj.Rmd and ML_proj.html. The following is the project requirement.
+This repository is created for Coursera Practical Machine Learning course project. There are two files included in this repository index.Rmd and index.html. The following is the project requirement.
 
 Background
 
